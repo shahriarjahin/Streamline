@@ -184,26 +184,6 @@ Other classes in `tests/test_download.py` are live integration tests. Running
 the whole test suite contacts YouTube and downloads test media; FFmpeg and
 Deno must be installed for those tests.
 
-## Uploading to GitHub
-
-For a step-by-step VS Code walkthrough and the complete exclusion list, read
-**[Upload to GitHub with VS Code](docs/GITHUB-UPLOAD.md)**.
-
-The prepared source ZIP contains only the files shown in the project layout.
-Extract it, then upload the **extracted source files**, including `.github/`,
-`.gitignore`, and `.gitattributes`, to your GitHub repository. The ZIP itself can
-also be attached to a GitHub release as a source download.
-
-Do not upload `venv/`, `downloads/`, partial media, test output, or local logs.
-They are excluded by `.gitignore` and the prepared source archive. Recreate the
-Python environment after downloading the source. Unix users should run the
-`chmod` command above after extracting a ZIP.
-
-When committing from macOS or Linux, preserve executable launcher permissions:
-
-```sh
-git update-index --chmod=+x "Start Downloader.sh" "Start Downloader.command"
-```
 
 ## Credits and license
 
