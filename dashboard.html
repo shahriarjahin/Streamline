@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Streamline · YouTube downloader</title>
+<style>
+:root{color-scheme:dark;--bg:#0b1018;--panel:#141c29;--line:#263246;--muted:#97a7bf;--text:#edf3fc;--accent:#a8f277;--blue:#83b8ff}*{box-sizing:border-box}body{margin:0;font:14px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;background:radial-gradient(ellipse at 90% 0,#1a2a34 0,transparent 40%),var(--bg);color:var(--text)}button,input,textarea,select{font:inherit}button{cursor:pointer;border:1px solid var(--line);background:#1c2737;color:var(--text);border-radius:10px;padding:10px 16px;font-weight:600}button:hover{border-color:#72849f;background:#263348}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:3px}button:disabled{opacity:.45;cursor:default}.primary{background:var(--accent);border-color:var(--accent);color:#15220e}.primary:hover{background:#bafa91;border-color:#bafa91}.ghost{background:transparent}.shell{max-width:1440px;margin:auto;padding:28px 40px}header{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:24px;gap:20px}.brand{display:flex;gap:13px;align-items:center;font-size:22px;font-weight:750;letter-spacing:-.7px}.logo{width:40px;height:40px;background:var(--accent);color:#172314;display:grid;place-items:center;border-radius:12px;font-size:24px}.sub{font-size:12px;color:var(--muted);font-weight:400;letter-spacing:.1px}.head-actions{display:flex;gap:10px;align-items:center}.local{font-size:12px;color:var(--muted);margin-right:8px}.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);margin-right:6px}.intro{margin:32px 0 24px;display:flex;justify-content:space-between;align-items:end}h1{font-size:32px;letter-spacing:-1px;margin:0 0 5px}p{margin:0;color:var(--muted)}.eyebrow{color:var(--accent);font-size:11px;font-weight:750;letter-spacing:2px;margin-bottom:8px}.layout{display:grid;grid-template-columns:370px minmax(0,1fr);gap:24px;align-items:start}.panel{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px}h2{font-size:18px;margin:0 0 4px;letter-spacing:-.4px}.help{font-size:12px;color:var(--muted)}label,.label{display:block;font-size:12px;font-weight:650;margin:22px 0 8px}textarea,input,select{border:1px solid #344158;background:#0e1520;color:var(--text);border-radius:10px;padding:11px;width:100%}textarea{resize:vertical;min-height:132px;line-height:1.6}textarea::placeholder,input::placeholder{color:#697d97}.fieldrow{display:flex;gap:8px;align-items:center}.fieldrow input{min-width:0}.fieldrow button{padding:10px 12px}.segmented{display:grid;grid-template-columns:1fr 1fr;gap:8px}.segmented button{padding:14px}.segmented button.selected{border-color:var(--accent);color:var(--accent);background:#243126}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.full{width:100%;margin-top:24px;padding:14px}.hint{font-size:11px;text-align:center;color:var(--muted);margin-top:12px}.tools{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);display:flex;gap:12px;flex-wrap:wrap;font-size:11px}.ready{color:var(--accent)}.missing{color:#ff9a91}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}.stat{border:1px solid var(--line);background:#141c29;border-radius:14px;padding:17px 20px}.stat span{font-size:11px;color:var(--muted)}.stat strong{font-size:27px;display:block;font-weight:600;margin-top:4px}.stat.active strong{color:var(--blue)}.stat.done strong{color:var(--accent)}.queue-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.queue-top button{font-size:12px;padding:7px 11px}.overall{margin:0 0 24px;background:#0e1520;border-radius:12px;padding:14px 16px}.overall-text{display:flex;justify-content:space-between;font-size:12px;margin-bottom:8px;color:var(--muted)}.track{height:7px;border-radius:20px;background:#2a3547;overflow:hidden}.fill{height:100%;width:0;background:var(--accent);border-radius:20px;transition:width .5s}.empty{text-align:center;padding:58px 20px 64px}.empty-icon{height:70px;width:70px;margin:0 auto 20px;display:grid;place-items:center;border:1px solid #3b4a60;background:#1c293a;color:var(--blue);border-radius:22px;font-size:32px}.empty h3{font-size:18px;margin:0 0 7px}.empty p{font-size:13px;max-width:300px;margin:auto}.job{padding:18px 0;border-top:1px solid var(--line)}.job-head{display:flex;gap:12px;align-items:start}.file-icon{flex:none;border-radius:10px;background:#24344a;color:var(--blue);padding:9px 12px;font-size:18px}.job-main{flex:1;min-width:0}.title{font-size:14px;font-weight:600;overflow-wrap:anywhere}.url{font-size:11px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin:3px 0 8px}.badge{font-size:10px;border-radius:20px;padding:4px 9px;background:#283549;color:#b7c9e0;white-space:nowrap}.badge.Completed,.badge.Skipped{background:#273d29;color:var(--accent)}.badge.Failed{background:#45282e;color:#ff9a91}.badge.Active{background:#233f59;color:var(--blue)}.meta{display:flex;justify-content:space-between;gap:12px;font-size:11px;color:var(--muted);margin:9px 0}.job .fill{background:var(--blue)}.job.Completed .fill,.job.Skipped .fill{background:var(--accent)}.job.Failed .fill{background:#ff9a91}.indeterminate{width:35%!important;animation:slide 1.8s infinite ease-in-out}@keyframes slide{0%{transform:translateX(-110%)}100%{transform:translateX(390%)}}details{margin:11px 0 0;font-size:11px;color:var(--muted)}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;max-height:200px;overflow:auto;background:#0c131e;padding:12px;border-radius:8px;font:11px/1.6 ui-monospace,monospace;color:#b6c6db}.job-actions{display:flex;justify-content:space-between;align-items:center}.small{font-size:11px;padding:5px 10px}.message{font-size:12px;color:var(--muted);overflow-wrap:anywhere;margin-top:9px}footer{display:flex;justify-content:space-between;font-size:11px;color:#7e90a8;margin:24px 0;gap:18px}.notice{display:none;margin-bottom:16px;border:1px solid #654346;background:#32242c;color:#ffd4ce;padding:12px 16px;border-radius:10px}.notice.success{border-color:#45653b;background:#20321f;color:#c5f5b4}dialog{background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:16px;max-width:450px;padding:28px}dialog::backdrop{background:#0009}dialog p{margin:12px 0 22px}.dialog-actions{display:flex;justify-content:end;gap:10px}@media(max-width:1000px){.shell{padding:24px}.layout{grid-template-columns:320px minmax(0,1fr)}.panel{padding:18px}.local{display:none}}@media(max-width:760px){.layout{grid-template-columns:1fr}.shell{padding:18px}h1{font-size:27px}.intro{margin-top:25px}header{align-items:start}.head-actions{flex-wrap:wrap;justify-content:end}.head-actions button{font-size:11px;padding:8px}.brand{font-size:18px}footer{flex-direction:column}.stats{gap:8px}.stat{padding:12px}.badge{font-size:9px}.queue-top{gap:12px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.remove{flex:none;width:32px;height:32px;padding:0;display:grid;place-items:center;font-size:23px;line-height:1;color:#adbbce;border-color:#3b4a60}.remove:hover{background:#45282e;color:#ffb8b0;border-color:#a75e68}.job-actions details{flex:1;min-width:0;margin-right:12px}.job-head .badge{margin-top:5px}.job.Failed .message{color:#ffaaa0}.job .meta{flex-wrap:wrap}.job .title{line-height:1.5}</style></head><body><div class="shell">
+<header><div class="brand"><span class="logo">↓</span><div>Streamline<div class="sub">Your YouTube download studio</div></div></div><div class="head-actions"><span class="local"><i class="dot"></i>Runs on your computer</span><button class="ghost" id="open">Open downloads ↗</button><button class="ghost" id="exit">Exit app</button></div></header>
+<div class="intro"><div><div class="eyebrow">SAVE WHAT INSPIRES YOU</div><h1>Your next download starts here.</h1><p>Videos, music, playlists. All in one place.</p></div></div>
+<div class="notice" id="notice" role="status" aria-live="polite"></div>
+<main class="layout"><section class="panel"><h2>New download</h2><p class="help">Paste a link. Pick your format. Make it yours.</p><form id="form">
+<label for="urls">YouTube links</label><textarea id="urls" placeholder="https://www.youtube.com/watch?v=…&#10;&#10;Add several links, one per line." required></textarea><p class="help">Videos, Shorts, playlists, and channels supported.</p>
+<span class="label">Download as</span><div class="segmented"><button type="button" class="selected" data-format="mp4" aria-pressed="true">▸ MP4 video</button><button type="button" data-format="mp3" aria-pressed="false">♫ MP3 audio</button></div>
+<div class="grid2"><div><label for="quality">Video quality</label><select id="quality"><option value="">Best available</option><option value="2160">4K · 2160p</option><option value="1440">2K · 1440p</option><option value="1080">Full HD · 1080p</option><option value="720">HD · 720p</option><option value="480">SD · 480p</option></select></div><div><label for="workers">Parallel downloads</label><select id="workers"><option>1</option><option>2</option><option selected>3</option><option>4</option><option>5</option></select></div></div>
+<label for="folder">Save to folder</label><div class="fieldrow"><input id="folder" aria-label="Downloads folder"><button type="button" id="browse" title="Choose folder">…</button></div>
+<button type="submit" class="primary full" id="start">↓ Add to download queue</button><p class="hint">Interrupted downloads resume when you add the link again.</p></form><div class="tools" id="tools"></div></section>
+<section><div class="stats"><div class="stat active"><span>IN PROGRESS</span><strong id="active">0</strong></div><div class="stat done"><span>COMPLETED / SKIPPED</span><strong id="done">0</strong></div><div class="stat"><span>IN QUEUE</span><strong id="queued">0</strong></div></div><div class="panel"><div class="queue-top"><div><h2>Download activity</h2><p class="help" id="queue-caption">Ready when you are.</p></div><button class="ghost" id="clear">Clear finished</button></div><div class="overall"><div class="overall-text"><span id="overall-label">Queue progress</span><span id="overall-count">0 / 0 finished</span></div><div class="track" role="progressbar" aria-label="Finished queue items" aria-valuemin="0" aria-valuemax="100" id="overall-track"><div class="fill" id="overall-fill"></div></div></div><div id="jobs"><div class="empty"><div class="empty-icon">↓</div><h3>A little space for your next find.</h3><p>Add a YouTube link to see live progress, download speed, and time remaining here.</p></div></div></div></section></main>
+<footer><span>Files stay on your computer · No account needed</span><button class="ghost small" id="cleanup">Clean incomplete files</button><span>Download content you have permission to save.</span></footer></div>
+<dialog id="confirm"><h2 id="confirm-title"></h2><p id="confirm-text"></p><div class="dialog-actions"><button id="confirm-no">Go back</button><button class="primary" id="confirm-yes">Continue</button></div></dialog>
+<script>
+const token='__TOKEN__';const $=id=>document.getElementById(id);let format='mp4',latest=[],stopped=false,rendered='';const opened=new Set();
+const escape=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function notice(message,success=false){$('notice').textContent=message;$('notice').className='notice'+(success?' success':'');$('notice').style.display='block'}
+async function api(path,data){const r=await fetch('/api/'+path,{method:data?'POST':'GET',headers:{'X-Dashboard-Token':token,'Content-Type':'application/json'},body:data?JSON.stringify(data):undefined});const result=await r.json();if(!r.ok)throw Error(result.error||'Request failed');return result}
+function settings(){return {urls:$('urls').value,format,quality:$('quality').value?Number($('quality').value):null,workers:Number($('workers').value),folder:$('folder').value}}
+function save(){localStorage.setItem('streamline-settings',JSON.stringify(settings()))}
+try{const s=JSON.parse(localStorage.getItem('streamline-settings')||'{}');for(const id of ['quality','workers','folder'])if(s[id]!=null)$(id).value=s[id];if(s.format==='mp3')format='mp3'}catch{}
+function pickFormat(){document.querySelectorAll('[data-format]').forEach(b=>{b.classList.toggle('selected',b.dataset.format===format);b.setAttribute('aria-pressed',String(b.dataset.format===format))});$('quality').disabled=format==='mp3'}pickFormat();
+document.querySelectorAll('[data-format]').forEach(b=>b.onclick=()=>{format=b.dataset.format;pickFormat();save()});['quality','workers','folder'].forEach(id=>$(id).onchange=save);
+$('form').onsubmit=async e=>{e.preventDefault();$('start').disabled=true;try{await api('add',settings());save();$('urls').value='';notice('Added to your download queue.',true);await refresh()}catch(e){notice(e.message)}finally{$('start').disabled=false}};
+$('open').onclick=()=>api('folder',{folder:$('folder').value}).catch(e=>notice(e.message));
+$('browse').onclick=async()=>{$('browse').disabled=true;try{const r=await api('browse',{});if(r.folder){$('folder').value=r.folder;save()}}catch(e){notice(e.message)}finally{$('browse').disabled=false}};
+$('clear').onclick=async()=>{try{await api('clear',{});await refresh()}catch(e){notice(e.message)}};
+function confirmAction(title,message,action){$('confirm-title').textContent=title;$('confirm-text').textContent=message;$('confirm').showModal();$('confirm-no').onclick=()=>$('confirm').close();$('confirm-yes').onclick=async()=>{$('confirm').close();try{await action()}catch(e){notice(e.message)}}}
+$('cleanup').onclick=()=>confirmAction('Clean incomplete files?','This removes unfinished files in the last used download folder and discards their resume progress. Completed files stay in place.',async()=>{const r=await api('cleanup',{});notice(r.message,true)});
+$('exit').onclick=()=>confirmAction('Close Streamline?','Active downloads will stop. Partial files are kept so you can resume next time.',async()=>{await api('shutdown',{});stopped=true;notice('Streamline is closed. Double-click Start Downloader to open it again.',true);$('start').disabled=true});
+function speed(n){return n?((n/1048576).toFixed(1)+' MB/s'):'—'}function eta(n){return n==null?'Estimating…':n<60?Math.ceil(n)+'s left':Math.ceil(n/60)+'m left'}
+
+function updateJobs(jobs){
+  const container=$('jobs');
+  const ids=new Set(jobs.map(j=>j.id));
+  container.querySelectorAll('article[data-job]').forEach(card=>{if(!ids.has(card.dataset.job))card.remove()});
+  if(!jobs.length){if(!container.querySelector('.empty'))container.innerHTML='<div class="empty"><div class="empty-icon">↓</div><h3>A little space for your next find.</h3><p>Add a YouTube link to see live progress, download speed, and time remaining here.</p></div>';return}
+  container.querySelector('.empty')?.remove();
+  jobs.forEach(j=>{
+    let card=container.querySelector(`[data-job="${j.id}"]`);
+    if(!card){
+      card=document.createElement('article');card.dataset.job=j.id;
+      card.innerHTML=`<div class="job-head"><div class="file-icon"></div><div class="job-main"><div class="title"></div><div class="url"></div></div><span class="badge"></span><button class="ghost remove" data-remove="${j.id}" title="Remove from queue (stops active download; keeps files)" aria-label="Remove download">×</button></div><div class="meta"><span class="phase"></span><span class="percent"></span></div><div class="track" role="progressbar" aria-label="Current media transfer progress" aria-valuemin="0" aria-valuemax="100"><div class="fill"></div></div><div class="meta"><span class="speed"></span><span class="stream-note"></span></div><div class="message"></div><div class="job-actions"><details><summary>Activity log</summary><pre></pre></details><button class="ghost small action"></button></div>`;
+      container.append(card);
+    }
+    const q=selector=>card.querySelector(selector);
+    card.className='job '+j.status;
+    q('.file-icon').textContent=j.format==='mp3'?'♫':'▸';
+    q('.title').textContent=j.title;
+    q('.url').textContent=j.url;q('.url').title=j.url;
+    q('.badge').className='badge '+j.status;q('.badge').textContent=j.status;
+    q('.phase').textContent=j.format.toUpperCase()+(j.format==='mp4'?' · '+(j.quality?j.quality+'p':'Best quality'):'')+' · '+j.phase+(j.item?' · Item '+j.item:'');
+    q('.percent').textContent=j.percent!=null?j.percent+'%':'';
+    if(j.percent!=null)q('.track').setAttribute('aria-valuenow',j.percent);else q('.track').removeAttribute('aria-valuenow');
+    q('.fill').className='fill'+(j.status==='Active'&&j.percent==null?' indeterminate':'');
+    q('.fill').style.width=(j.percent||0)+'%';
+    q('.speed').textContent=j.status==='Active'?speed(j.speed)+' · '+eta(j.eta):'';
+    q('.stream-note').textContent=j.status==='Active'?'Progress shown per media stream':'';
+    q('.message').textContent=j.message||'';
+    const log=q('pre'),newLog=j.logs.join('\n')||'Waiting for activity…';
+    if(log.textContent!==newLog){const atEnd=log.scrollTop+log.clientHeight>=log.scrollHeight-20;log.textContent=newLog;if(atEnd)log.scrollTop=log.scrollHeight}
+    const action=q('.action');
+    action.hidden=!['Active','Queued','Failed','Cancelled'].includes(j.status);
+    const cancel=['Active','Queued'].includes(j.status);
+    action.textContent=cancel?'Cancel':'Retry / resume';
+    action.dataset.action=cancel?'cancel':'retry';action.dataset.id=j.id;
+  });
+}
+$('jobs').onclick=async e=>{
+  const button=e.target.closest('button');if(!button)return;
+  const job=latest.find(j=>j.id===(button.dataset.remove||button.dataset.id));if(!job)return;
+  button.disabled=true;
+  try{
+    if(button.dataset.remove){await api('remove',{id:job.id});notice('Removed from queue. Downloaded and partial files are kept.',true)}
+    else if(button.dataset.action==='cancel')await api('cancel',{id:job.id});
+    else await api('add',{urls:job.url,format:job.format,quality:job.quality,folder:job.folder,workers:Number($('workers').value)});
+    await refresh();
+  }catch(e){notice(e.message)}finally{button.disabled=false}
+};
+async function refresh(){
+  if(stopped)return;
+  try{
+    const state=await api('state');latest=state.jobs;
+    if(!$('folder').value)$('folder').value=state.folder;
+    $('tools').innerHTML=Object.entries(state.tools).map(([k,v])=>`<span class="${v?'ready':'missing'}">${v?'●':'○'} ${escape(k)} ${v?'ready':'missing'}</span>`).join('');
+    $('cleanup').disabled=state.maintenance||latest.some(j=>['Active','Queued'].includes(j.status));
+    const active=latest.filter(j=>j.status==='Active').length,done=latest.filter(j=>['Completed','Skipped'].includes(j.status)).length,queued=latest.filter(j=>j.status==='Queued').length,finished=latest.length-active-queued,failed=latest.filter(j=>j.status==='Failed').length;
+    $('active').textContent=active;$('done').textContent=done;$('queued').textContent=queued;
+    $('overall-count').textContent=`${finished} / ${latest.length} finished`;
+    $('overall-fill').style.width=(latest.length?finished/latest.length*100:0)+'%';
+    $('overall-track').setAttribute('aria-valuenow',latest.length?Math.round(finished/latest.length*100):0);
+    $('queue-caption').textContent=failed?`${failed} failed · Open the activity log for details.`:active?'Your downloads are on their way.':queued?'Waiting to start.':latest.length?'All queue items have finished.':'Ready when you are.';
+    updateJobs(latest);
+  }catch(e){notice('Cannot connect to Streamline. Double-click Start Downloader to reopen the app.')}
+}
+async function poll(){await refresh();if(!stopped)setTimeout(poll,900)}poll();
+</script></body></html>

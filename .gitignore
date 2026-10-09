@@ -1,0 +1,46 @@
+# Local Python environment and caches
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.test-temp/
+.coverage
+htmlcov/
+
+# Personal media, resumable streams, and archives
+downloads/
+test_downloads/
+tests/test_downloads/
+*.part
+*.part-Frag*
+*.ytdl
+*.temp
+.audio_download_archive
+.video_download_archive
+*.mp4
+*.mp3
+*.mkv
+*.webm
+*.m4a
+*.opus
+
+# Local app/test output and source packages
+.streamline.log
+*.log
+*.zip
+dashboard-*.jpg
+release/
+New Text Document.txt
+
+# OS/editor files and private local settings
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+.env
+.env.*
+!.env.example
+.aws/
+.codex/
+.agents/
